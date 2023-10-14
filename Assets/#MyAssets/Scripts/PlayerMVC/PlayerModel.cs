@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerModel
 {
     private PlayerController playerController;
-    private PlayerModelDataScriptableObject playerDataScriptable;
+    public PlayerModelDataScriptableObject playerDataScriptable { get; private set; }
 
     public PlayerModel(PlayerModelDataScriptableObject playerDataScriptable, PlayerController playerController)
     {
