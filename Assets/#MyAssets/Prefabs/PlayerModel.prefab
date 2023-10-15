@@ -2099,7 +2099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2324001c3e1a31a4ebcbbd76a3009f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRigidBody: {fileID: 0}
+  playerRigidBody: {fileID: 2167626737348461709}
 --- !u!114 &7426933507292349643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,7 +2113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 2167626737348461708}
-  playerView: {fileID: 0}
   inputSpeedParameterName: InputSpeed
 --- !u!1 &4161908208198806765
 GameObject:

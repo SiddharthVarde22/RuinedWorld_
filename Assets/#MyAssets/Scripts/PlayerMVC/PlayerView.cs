@@ -11,7 +11,6 @@ public class PlayerView : MonoBehaviour
 
     private void Start()
     {
-        GetPlayerRigidbody();
         ServiceLocator.Instance.GetService<WorldObjectHolderService>
             (TypesOfServices.WorldObjectHolder)?.SetPlayerRefrence(this);
     }
@@ -41,8 +40,8 @@ public class PlayerView : MonoBehaviour
         playerController.MovePlayer(inputService.InputDirection);
     }
 
-    private void GetPlayerRigidbody()
-    {
-        playerRigidBody = GetComponent<Rigidbody>();
-    }
+    //private void GetPlayerRigidbody()
+    //{
+    //    playerRigidBody = GetComponent<Rigidbody>();
+    //}
 }
