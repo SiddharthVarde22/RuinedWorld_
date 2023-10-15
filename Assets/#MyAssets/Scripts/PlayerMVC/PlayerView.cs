@@ -9,6 +9,9 @@ public class PlayerView : MonoBehaviour
 
     public Rigidbody playerRigidBody;
 
+    [SerializeField]
+    Transform meleeWeaponHolderTransform;
+
     private void Start()
     {
         ServiceLocator.Instance.GetService<WorldObjectHolderService>
@@ -40,8 +43,18 @@ public class PlayerView : MonoBehaviour
         playerController.MovePlayer(inputService.InputDirection);
     }
 
-    //private void GetPlayerRigidbody()
-    //{
-    //    playerRigidBody = GetComponent<Rigidbody>();
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        IInteractable interactable;
+
+        if(other.TryGetComponent<IInteractable>(out interactable))
+        {
+            interactable.OnInteractonHappened(this);
+        }
+    }
+
+    public Transform GetMeleeWeaponHolderTransform()
+    {
+        return meleeWeaponHolderTransform;
+    }
 }

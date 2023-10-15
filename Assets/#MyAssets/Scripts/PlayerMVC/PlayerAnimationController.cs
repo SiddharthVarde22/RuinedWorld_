@@ -12,11 +12,17 @@ public class PlayerAnimationController : MonoBehaviour
     float absoluteInputSpeed = 0;
 
     private InputService inputService;
+    private RuntimeAnimatorController handToHandAnimationController;
+
+    [SerializeField]
+    AnimatorOverrideController meleeWeaponOverrideController;
 
     private void Start()
     {
         inputSpeedHash = Animator.StringToHash(inputSpeedParameterName);
         attackTriggerHash = Animator.StringToHash(attackTriggerParameterName);
+
+        handToHandAnimationController = playerAnimator.runtimeAnimatorController;
     }
 
     private void Update()
@@ -56,5 +62,10 @@ public class PlayerAnimationController : MonoBehaviour
     public void DisablePlayerMovements()
     {
         inputService.DisableMovements();
+    }
+
+    public void OnMeleeWeaponPickup()
+    {
+        playerAnimator.runtimeAnimatorController = meleeWeaponOverrideController;
     }
 }
